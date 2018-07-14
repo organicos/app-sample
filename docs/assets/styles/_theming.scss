@@ -1,0 +1,4 @@
+@import './blanco-theme';
+
+// APPLY THE THEME TO THE MATERIAL COMPONENTS
+@include angular-material-theme($blanco-theme);
