@@ -1,0 +1,21 @@
+@import './font';
+@import './theming';
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(244, 244, 244, 0.5);
+}
+
+.click {
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}

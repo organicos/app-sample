@@ -21,9 +21,9 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'Formula 1 Champions'`, async(() => {
+  it(`should have as title 'Sample App'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Formula 1 Champions');
+    expect(app.title).toEqual('Sample App');
   }));
 });

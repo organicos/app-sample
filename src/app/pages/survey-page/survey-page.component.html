@@ -1,0 +1,110 @@
+<div fxLayout="column" fxLayoutGap="16px">
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="left center">
+
+      <div fxFlex="235px">
+
+        <button mat-raised-button type="button" routerLink="/">
+          <mat-icon>chevron_left</mat-icon>
+          Back to dashboard
+        </button>
+
+      </div>
+
+      <div fxFlex class="text-center">
+
+        <h2>{{ title }}</h2>
+
+        <h2>{{ subtitle }}</h2>
+
+      </div>
+
+      <div fxFlex="235px">
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="16px">
+
+      <mat-card fxFlex="235px">
+
+        <mat-card-content>
+
+          <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="left center">
+
+            <div fxflex>
+
+              <mat-icon>person_outline</mat-icon>
+
+            </div>
+
+            <div fxFlex>
+
+              {{ customer.name }}
+
+            </div>
+
+          </div>
+
+          <ul>
+            <li fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="left center" *ngFor="let step of steps; let i = index;">
+              <div fxflex>
+                <mat-icon>{{ step.valid ? '' : ''}}</mat-icon>
+              </div>
+              <div fxFlex>
+                <a [routerLink]="step.path" (click)="currentStep = i">{{step.title}}</a>
+              </div>
+            </li>
+          </ul>
+
+        </mat-card-content>
+
+      </mat-card>
+
+      <mat-card fxFlex>
+
+        <router-outlet></router-outlet>
+
+        <div fxLayout="row" fxLayoutGap="8px">
+          <button fxFlex mat-raised-button color="default" type="button" (click)="goPreviousStep()" *ngIf="currentPath">
+            Back
+          </button>
+          <button fxFlex mat-raised-button color="primary" type="button" (click)="goNextStep()" *ngIf="currentPath !== 'qualification-interest'">
+            Next
+          </button>
+        </div>
+
+      </mat-card>
+
+      <mat-card fxFlex="235px">
+
+        <mat-card-header>
+
+          <img mat-card-avatar src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Alonso_2016.jpg/51px-Alonso_2016.jpg">
+
+          <mat-card-title>{{ manager.name }}</mat-card-title>
+
+          <mat-card-subtitle>{{ manager.title }}</mat-card-subtitle>
+
+        </mat-card-header>
+
+        <mat-card-content>
+          <div>{{ manager.desc }}</div>
+        </mat-card-content>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</div>

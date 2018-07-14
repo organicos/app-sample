@@ -1,9 +1,18 @@
 .app-wrapper {
-  min-width: 600px;
+  min-width: 1024px;
 
+  .mat-toolbar {
+    background-color: #fff;
+  }
+  
   img {
     margin-top: 8px;
-    width: 48px;
     height: 48px;
+  }
+
+  .content-wrapper {
+    width: 1024px;
+    max-width: 90vw;
+    margin: auto;
   }
 }

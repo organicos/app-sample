@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ErgastServiceModule } from '@services/ergast/ergast-service.module';
+import { BlancoServiceModule } from '@services/blanco/blanco-service.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ErgastServiceModule
+    BlancoServiceModule
   ],
   exports: [
-    ErgastServiceModule
+    BlancoServiceModule
   ]
 })
 export class CoreModule { }

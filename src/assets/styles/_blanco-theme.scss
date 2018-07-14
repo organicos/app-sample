@@ -1,0 +1,15 @@
+@import '~@angular/material/_theming';
+@include mat-core();
+
+// COLORS
+$blanco-theme-primary: mat-palette($mat-teal, A400);
+$blanco-theme-accent: mat-palette($mat-orange);
+$blanco-theme-warn: mat-palette($mat-red);
+
+// THEME
+$blanco-theme: mat-light-theme($blanco-theme-primary, $blanco-theme-accent, $blanco-theme-warn);
+
+
+button.mat-raised-button.mat-primary{
+  color: white;
+}

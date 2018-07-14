@@ -31,7 +31,7 @@ describe('BlancoService', () => {
 
     it('should return a promise', () => {
 
-      const call = service.seasonCustomer(year);
+      const call = service.insertCustomer(year);
 
       expect(call.then).toBeTruthy();
 
@@ -45,7 +45,7 @@ describe('BlancoService', () => {
         { foo: 'bar' }
       ];
 
-      service.seasonCustomer(year).then(season => {
+      service.insertCustomer(year).then(season => {
         expect(season).toBeTruthy(2);
       });
 
@@ -60,7 +60,7 @@ describe('BlancoService', () => {
     it('should throw a custom error if a wrong year is given`', () => {
       const endpoint = API.CHAMPION_BY_YEAR_API.replace('${year}', year);
 
-      service.seasonCustomer(null)
+      service.insertCustomer(null)
         .then(() => { }, err => {
           expect(err).toBe(`BlancoService Error:: Need to improve error log`);
         });
