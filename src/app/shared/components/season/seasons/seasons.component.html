@@ -1,0 +1,12 @@
+<div fxLayout="row"  fxLayoutGap="8px">
+  <div>
+    <div *ngFor="let year of years" class="app-season">
+      <app-season [year]="year" (click)="setOpenYear(year)" [highlight]="yearOpen == year" class="click" (championReceived)="champions[year] = $event;"></app-season>
+    </div>
+  </div>
+  <div>
+    <div *ngFor="let raceYear of years">
+      <app-season-races [hidden]="yearOpen != raceYear" [year]="raceYear" [driver]="champions[raceYear]?.driverId"></app-season-races>
+    </div>
+  </div>
+</div>

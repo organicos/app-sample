@@ -1,0 +1,29 @@
+<div class="season-wrapper"
+  fxLayout="row" fxLayoutWrap="true" fxLayoutAlign="left center"
+  [ngClass]="{highlight: highlight}">
+
+  <strong>{{year}}</strong>
+
+  <div class="image-wrapper" fxFlex="64px">
+    <img [src]="champion?.image" *ngIf="champion?.image">
+  </div>
+  
+  <div fxFlex>
+    <span *ngIf="season else loadingTemplate">
+      <span *ngIf="season.MRData else problemsLoadingTemplate">
+        <span *ngIf="champion">
+          {{ champion.givenName }}
+          {{ champion.familyName }}
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+
+<ng-template #loadingTemplate>
+  Loading...
+</ng-template>
+
+<ng-template #problemsLoadingTemplate>
+  Problems loading data. Please try again later. If the problem persists, contact the support.
+</ng-template>

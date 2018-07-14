@@ -1,0 +1,25 @@
+<div class="seasons-wrapper">
+
+  <span *ngIf="(races && !loading) else loadingTemplate">
+
+    <span *ngIf="races.MRData else problemsLoadingTemplate">
+
+      <div *ngFor="let race of races.MRData.RaceTable.Races" class="season-race">
+
+        <app-season-race [race]="race" [highlight]="driverWon[race.round]"></app-season-race>
+
+      </div>
+
+    </span>
+
+  </span>
+
+</div>
+  
+<ng-template #loadingTemplate>
+  Loading...
+</ng-template>
+
+<ng-template #problemsLoadingTemplate>
+  Problems loading data. Please try again later. If the problem persists, contact the support.
+</ng-template>

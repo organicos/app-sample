@@ -1,0 +1,25 @@
+@import './../../../../../assets/styles/constants';
+
+.season-wrapper {
+  font-size: 18px;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  height: 44px;
+  
+  &.highlight {
+    background-color: $highlight-color;
+  }
+
+  .image-wrapper {
+    text-align: right;
+    
+    img {
+      display: block;
+      border-radius: 50%;
+      max-width: 40px;
+      height: 40px;
+      margin: auto;
+    }
+  }
+}
