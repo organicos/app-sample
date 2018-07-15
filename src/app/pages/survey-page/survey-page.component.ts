@@ -26,9 +26,9 @@ export class SurveyPageComponent {
   subtitle = 'Please review your information below.';
 
   steps = [
-    { title: 'ID details', path: '.', valid: false },
+    { title: 'ID details', path: '.', valid: true },
     { title: 'Second nationality', path: 'second-nationality', valid: false },
-    { title: 'Address details', path: 'address', valid: false },
+    { title: 'Address details', path: 'address', valid: true },
     { title: 'Aditional details', path: 'aditional-details', valid: false },
     { title: 'Qualification and interest', path: 'qualification-interest', valid: false },
   ];

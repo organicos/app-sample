@@ -55,11 +55,17 @@
 
             <ul>
               <li fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="left center" *ngFor="let step of steps; let i = index;">
-                <div fxflex>
-                  <mat-icon>{{ step.valid ? '' : ''}}</mat-icon>
+                <div fxflex [ngSwitch]="currentPath === step.path">
+                  <ng-container *ngSwitchCase="true">
+                    <mat-icon color="primary">radio_button_checked</mat-icon>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="false">
+                    <mat-icon *ngIf="step.valid" color="primary">check</mat-icon>
+                    <mat-icon *ngIf="!step.valid" color="default">fiber_manual_record</mat-icon>
+                  </ng-container>
                 </div>
                 <div fxFlex>
-                  <a [routerLink]="step.path" (click)="currentStep = i">{{step.title}}</a>
+                  <a [routerLink]="step.path">{{step.title}}</a>
                 </div>
               </li>
             </ul>
