@@ -21,11 +21,7 @@
 
       </div>
 
-      <div fxFlex="235px">
-
-
-
-      </div>
+      <div fxFlex="235px"></div>
 
     </div>
 
@@ -75,7 +71,7 @@
         <router-outlet></router-outlet>
 
         <div fxLayout="row" fxLayoutGap="8px">
-          <button fxFlex mat-raised-button color="default" type="button" (click)="goPreviousStep()" *ngIf="currentPath">
+          <button fxFlex mat-raised-button color="default" type="button" (click)="goPreviousStep()" *ngIf="currentPath && currentPath !== '.'">
             Back
           </button>
           <button fxFlex mat-raised-button color="primary" type="button" (click)="goNextStep()" *ngIf="currentPath !== 'qualification-interest'">

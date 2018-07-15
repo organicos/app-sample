@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 })
 export class SurveyPageComponent {
 
-  currentPath = '';
+  currentPath = '.';
 
   customer: any = {
     name: 'Lucas Simons'
@@ -26,7 +26,7 @@ export class SurveyPageComponent {
   subtitle = 'Please review your information below.';
 
   steps = [
-    { title: 'ID details', path: '', valid: false },
+    { title: 'ID details', path: '.', valid: false },
     { title: 'Second nationality', path: 'second-nationality', valid: false },
     { title: 'Address details', path: 'address', valid: false },
     { title: 'Aditional details', path: 'aditional-details', valid: false },
@@ -57,13 +57,12 @@ export class SurveyPageComponent {
   private goTostep(offset) {
     const currentStep = this.steps.find(step => step.path === this.currentPath);
     const currentStepIndex = this.steps.indexOf(currentStep);
-    const nextPage = (currentStepIndex || 0) + offset;
-
-    if (nextPage > 0 && nextPage < this.steps.length) {
+    const nextPage = currentStepIndex >= 0 ? currentStepIndex + offset : 0;
+    if (nextPage > -1 && nextPage < this.steps.length) {
       const nextStepPath = this.steps[nextPage] ? this.steps[nextPage].path : '';
       this.router.navigate([nextStepPath], { relativeTo: this.route });
     } else {
-      this.router.navigate(['survey']);
+      this.router.navigate(['.']);
     }
   }
 
@@ -72,7 +71,7 @@ export class SurveyPageComponent {
       const child: any = this.route.firstChild.snapshot.url[0].path;
       this.currentPath = child;
     } catch (error) {
-      this.currentPath = '';
+      this.currentPath = '.';
     }
   }
 
