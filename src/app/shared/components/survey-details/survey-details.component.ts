@@ -1,24 +1,23 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { CountryService } from '@app/shared/services/country/country.service';
 
 @Component({
   selector: 'app-survey-details',
   templateUrl: './survey-details.component.html',
   styleUrls: ['./survey-details.component.scss']
 })
-export class SurveyDetailsComponent implements OnInit {
+export class SurveyDetailsComponent {
 
   details: any = {};
 
-  countries = [
-    { id: 1, label: 'Brazil', value: 'br' },
-    { id: 2, label: 'Netherlands', value: 'nl' },
-  ];
+  countries = [];
 
   @Output() saved = new EventEmitter<any>();
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+    private countryService: CountryService
+  ) {
+    this.countries = this.countryService.countries;
   }
 
   save() {
