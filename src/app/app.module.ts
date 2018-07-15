@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from '@app/core/core/core.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { MatToolbarModule, MatIconModule, MatButtonModule, MatDividerModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatButtonModule, MatDividerModule, MatNativeDateModule } from '@angular/material';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -22,6 +22,7 @@ import { environment } from '../environments/environment';
     MatToolbarModule,
     MatIconModule,
     MatDividerModule,
+    MatNativeDateModule,
     ServiceWorkerModule.register(environment.swFile, { enabled: environment.production }),
   ],
   bootstrap: [AppComponent]

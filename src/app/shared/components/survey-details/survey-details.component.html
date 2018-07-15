@@ -1,1 +1,147 @@
 <h3>Deatils</h3>
+
+<form role="form" (submit)="save()" fxLayout="column" fxLayoutGap="8px">
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="16px">
+
+      <div fxFlex>
+
+        <div fxLayout="column" fxLayoutAlign="space-between">
+
+          <div fxFlex>
+
+            <span class="gender-title">Gender</span>
+
+          </div>
+
+          <div fxFlex>
+
+            <mat-radio-group [(ngModel)]="details.gender" name="gender" fxLayout="row" fxLayoutGap="16px">
+
+              <mat-radio-button color="primary" value="female">Female</mat-radio-button>
+
+              <mat-radio-button color="primary" value="male">Male</mat-radio-button>
+
+            </mat-radio-group>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <mat-form-field fxFlex>
+
+        <input matInput placeholder="Initials" [(ngModel)]="details.initials" name="initials">
+
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="16px">
+
+      <mat-form-field fxFlex>
+
+        <input matInput placeholder="First name" [(ngModel)]="details.firstName" name="firstName">
+
+      </mat-form-field>
+
+      <mat-form-field fxFlex>
+
+        <input matInput placeholder="Last name" [(ngModel)]="details.lastName" name="lastName">
+
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+  <mat-form-field fxFlex>
+
+    <mat-select placeholder="Nationality" [(ngModel)]="details.nationality" name="nationality">
+      <mat-option *ngFor="let nationality of countries" [value]="nationality.value">
+        {{nationality.label}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="16px">
+
+      <mat-form-field fxFlex>
+
+        <input matInput [matDatepicker]="birthPicker" placeholder="Date of birth" [(ngModel)]="details.birthDate" name="birthDate">
+        <mat-datepicker-toggle matSuffix [for]="birthPicker"></mat-datepicker-toggle>
+        <mat-datepicker #birthPicker></mat-datepicker>
+
+      </mat-form-field>
+
+      <mat-form-field fxFlex>
+
+        <input matInput placeholder="Personal number" [(ngModel)]="details.personalNumber" name="personalNumber">
+
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="16px">
+
+      <mat-form-field fxFlex>
+
+        <input matInput placeholder="Documentnumber" [(ngModel)]="details.documentNumber" name="documentNumber">
+
+      </mat-form-field>
+
+      <mat-form-field fxFlex>
+
+        <input matInput [matDatepicker]="expiryPicker" placeholder="Expirydate" [(ngModel)]="details.expiryDate" name="expiryDate">
+        <mat-datepicker-toggle matSuffix [for]="expiryPicker"></mat-datepicker-toggle>
+        <mat-datepicker #expiryPicker></mat-datepicker>
+
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="16px">
+
+      <mat-form-field fxFlex>
+
+        <mat-select placeholder="Country of birth" [(ngModel)]="details.birthCountry" name="birthCountry">
+          <mat-option *ngFor="let birthCountry of countries" [value]="birthCountry.value">
+            {{birthCountry.label}}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+
+      <mat-form-field fxFlex>
+
+        <mat-select placeholder="Place of birth" [(ngModel)]="details.placeOfBirth" name="placeOfBirth">
+          <mat-option *ngFor="let placeOfBirth of countries" [value]="placeOfBirth.value">
+            {{placeOfBirth.label}}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+</form>

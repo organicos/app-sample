@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-survey-details',
@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyDetailsComponent implements OnInit {
 
+  details: any = {};
+
+  countries = [
+    { id: 1, label: 'Brazil', value: 'br' },
+    { id: 2, label: 'Netherlands', value: 'nl' },
+  ];
+
+  @Output() saved = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  save() {
+
+    this.saved.emit(this.details);
+
   }
 
 }
