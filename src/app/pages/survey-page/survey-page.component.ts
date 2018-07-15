@@ -26,7 +26,7 @@ export class SurveyPageComponent {
   subtitle = 'Please review your information below.';
 
   steps = [
-    { title: 'ID details', path: 'details', valid: false },
+    { title: 'ID details', path: '', valid: false },
     { title: 'Second nationality', path: 'second-nationality', valid: false },
     { title: 'Address details', path: 'address', valid: false },
     { title: 'Aditional details', path: 'aditional-details', valid: false },
@@ -42,6 +42,10 @@ export class SurveyPageComponent {
 
   }
 
+  finish() {
+    this.router.navigate(['/']);
+  }
+
   goPreviousStep() {
     this.goTostep(-1);
   }
@@ -55,7 +59,7 @@ export class SurveyPageComponent {
     const currentStepIndex = this.steps.indexOf(currentStep);
     const nextPage = (currentStepIndex || 0) + offset;
 
-    if (nextPage > -1 && nextPage < this.steps.length) {
+    if (nextPage > 0 && nextPage < this.steps.length) {
       const nextStepPath = this.steps[nextPage] ? this.steps[nextPage].path : '';
       this.router.navigate([nextStepPath], { relativeTo: this.route });
     } else {

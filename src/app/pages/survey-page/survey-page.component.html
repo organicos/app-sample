@@ -81,6 +81,9 @@
           <button fxFlex mat-raised-button color="primary" type="button" (click)="goNextStep()" *ngIf="currentPath !== 'qualification-interest'">
             Next
           </button>
+          <button fxFlex mat-raised-button color="accent" type="button" (click)="finish()" *ngIf="currentPath === 'qualification-interest'">
+            Finish
+          </button>
         </div>
 
       </mat-card>
