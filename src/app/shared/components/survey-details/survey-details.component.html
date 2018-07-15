@@ -78,7 +78,8 @@
 
       <mat-form-field fxFlex>
 
-        <input matInput [matDatepicker]="birthPicker" placeholder="Date of birth" [(ngModel)]="details.birthDate" name="birthDate">
+        <input matInput #birthPickerInput placeholder="Date of birth" name="birthDate" [matDatepicker]="birthPicker" [(ngModel)]="details.birthDate"
+          (focus)="birthPicker.open(); birthPickerInput.blur()">
         <mat-datepicker-toggle matSuffix [for]="birthPicker"></mat-datepicker-toggle>
         <mat-datepicker #birthPicker></mat-datepicker>
 
@@ -106,7 +107,8 @@
 
       <mat-form-field fxFlex>
 
-        <input matInput [matDatepicker]="expiryPicker" placeholder="Expirydate" [(ngModel)]="details.expiryDate" name="expiryDate">
+        <input matInput #expiryPickerInput [matDatepicker]="expiryPicker" placeholder="Expirydate" [(ngModel)]="details.expiryDate"
+          name="expiryDate" (focus)="expiryPicker.open(); expiryPickerInput.blur()">
         <mat-datepicker-toggle matSuffix [for]="expiryPicker"></mat-datepicker-toggle>
         <mat-datepicker #expiryPicker></mat-datepicker>
 
