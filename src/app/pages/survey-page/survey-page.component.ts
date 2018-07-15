@@ -35,10 +35,12 @@ export class SurveyPageComponent {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    protected route: ActivatedRoute
   ) {
 
-    this.subscribeToActiveRute();
+    this.subscribeToActiveRoute();
+
+    console.log('component restarted');
 
   }
 
@@ -54,28 +56,36 @@ export class SurveyPageComponent {
     this.goTostep(1);
   }
 
+  get validSurvey() {
+
+    return this.steps.reduce((lastValue, step) => {
+      return step.valid && lastValue;
+    }, false);
+
+  }
+
   private goTostep(offset) {
     const currentStep = this.steps.find(step => step.path === this.currentPath);
     const currentStepIndex = this.steps.indexOf(currentStep);
     const nextPage = currentStepIndex >= 0 ? currentStepIndex + offset : 0;
     if (nextPage > -1 && nextPage < this.steps.length) {
       const nextStepPath = this.steps[nextPage] ? this.steps[nextPage].path : '';
-      this.router.navigate([nextStepPath], { relativeTo: this.route });
+      this.router.navigate(['/survey', nextStepPath]);
     } else {
-      this.router.navigate(['.']);
+      this.router.navigate(['/survey']);
     }
   }
 
   private getCurrentStepFroRoute() {
     try {
-      const child: any = this.route.firstChild.snapshot.url[0].path;
+      const child: any = this.route.snapshot.url[0].path;
       this.currentPath = child;
     } catch (error) {
       this.currentPath = '.';
     }
   }
 
-  private subscribeToActiveRute() {
+  private subscribeToActiveRoute() {
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe(event => {
