@@ -7,8 +7,9 @@
       <div fxFlex="235px">
 
         <button mat-raised-button type="button" routerLink="/">
-          <mat-icon>chevron_left</mat-icon>
-          Back to dashboard
+
+          <mat-icon>chevron_left</mat-icon> Back to dashboard
+
         </button>
 
       </div>
@@ -54,20 +55,33 @@
             </div>
 
             <ul>
+
               <li fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="left center" *ngFor="let step of steps; let i = index;">
+
                 <div fxflex [ngSwitch]="currentPath === step.path">
+
                   <ng-container *ngSwitchCase="true">
+
                     <mat-icon color="primary">radio_button_checked</mat-icon>
+
                   </ng-container>
+
                   <ng-container *ngSwitchCase="false">
+
                     <mat-icon *ngIf="step.valid" color="primary">check</mat-icon>
+
                     <mat-icon *ngIf="!step.valid" color="default">fiber_manual_record</mat-icon>
+
                   </ng-container>
+
                 </div>
+
                 <div fxFlex>
                   <a [routerLink]="step.path">{{step.title}}</a>
                 </div>
+
               </li>
+
             </ul>
 
           </mat-card-content>
@@ -81,15 +95,19 @@
         <router-outlet></router-outlet>
 
         <div fxLayout="row" fxLayoutGap="8px">
+
           <button fxFlex mat-raised-button color="default" type="button" (click)="goPreviousStep()" *ngIf="currentPath && currentPath !== '.'">
             Back
           </button>
+
           <button fxFlex mat-raised-button color="primary" type="button" (click)="goNextStep()" *ngIf="currentPath !== 'qualification-interest'">
             Next
           </button>
+
           <button fxFlex mat-raised-button color="accent" type="button" (click)="finish()" *ngIf="currentPath === 'qualification-interest'">
             Finish
           </button>
+
         </div>
 
       </mat-card>
