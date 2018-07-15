@@ -3,6 +3,12 @@
 
   .mat-toolbar {
     background-color: #fff;
+
+    .mat-divider-vertical {
+      width: 1px;
+      height: 58px;
+      margin: 0 8px;
+    }
   }
   
   img {
@@ -14,4 +20,5 @@
     width: 1000px;
     margin: auto;
   }
+  
 }

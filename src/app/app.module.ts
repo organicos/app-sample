@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from '@app/core/core/core.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { MatToolbarModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatButtonModule, MatDividerModule } from '@angular/material';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -18,7 +18,10 @@ import { environment } from '../environments/environment';
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
+    MatButtonModule,
     MatToolbarModule,
+    MatIconModule,
+    MatDividerModule,
     ServiceWorkerModule.register(environment.swFile, { enabled: environment.production }),
   ],
   bootstrap: [AppComponent]
