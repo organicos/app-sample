@@ -6,24 +6,32 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgba(244, 244, 244, 0.5);
-}
 
-.click {
-    cursor: pointer;
-}
+    a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            color: $blanco-primary-color;
+        }
+    }
 
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.app-spacer {
-    flex: 1 1 auto;
-}
-
-.toolbar-icon {
-    padding: 0 14px;
+    .click {
+        cursor: pointer;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .text-right {
+        text-align: right;
+    }
+    
+    .app-spacer {
+        flex: 1 1 auto;
+    }
+    
+    .toolbar-icon {
+        padding: 0 14px;
+    }
 }

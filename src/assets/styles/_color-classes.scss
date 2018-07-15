@@ -1,0 +1,26 @@
+.blanco-primary-color {
+  color: $blanco-primary-color;
+}
+
+.blanco-primary-bg {
+  background-color: $blanco-primary-bg;
+  color: mat-contrast($blanco-theme-primary, default);
+}
+
+.blanco-accent-color {
+  color: $blanco-accent-color;
+}
+
+.blanco-accent-bg {
+  background-color: $blanco-accent-bg;
+  color: mat-contrast($blanco-theme-accent, default);
+}
+
+.blanco-warn-color {
+  color: $blanco-warn-color;
+}
+
+.blanco-warn-bg {
+  background-color: $blanco-warn-bg;
+  color: mat-contrast($blanco-theme-warn, default);
+}

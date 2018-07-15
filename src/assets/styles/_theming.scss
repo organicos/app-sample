@@ -1,4 +1,10 @@
+// Do not change this import sequence
+// 1 - Theme
 @import './blanco-theme';
+// 2 - Constants
+@import './color-constants';
+// 3 - Classes
+@import './color-classes';
 
 // APPLY THE THEME TO THE MATERIAL COMPONENTS
 @include angular-material-theme($blanco-theme);
