@@ -7,6 +7,10 @@
   color: mat-contrast($blanco-theme-primary, default);
 }
 
+.blanco-primary-border-3px {
+  border: 3px solid $blanco-primary-bg;
+}
+
 .blanco-accent-color {
   color: $blanco-accent-color;
 }
@@ -16,6 +20,10 @@
   color: mat-contrast($blanco-theme-accent, default);
 }
 
+.blanco-accent-border-3px {
+  border: 3px solid $blanco-accent-bg;
+}
+
 .blanco-warn-color {
   color: $blanco-warn-color;
 }
@@ -23,4 +31,8 @@
 .blanco-warn-bg {
   background-color: $blanco-warn-bg;
   color: mat-contrast($blanco-theme-warn, default);
+}
+
+.blanco-warn-border-3px {
+  border: 3px solid $blanco-warn-bg;
 }
