@@ -6,25 +6,19 @@
 
     <div fxLayout="row" fxLayoutGap="16px">
 
-      <mat-form-field fxFlex>
-
-        <input matInput placeholder="Postal code" [(ngModel)]="address.postalCode" name="postalCode">
-
-      </mat-form-field>
-
       <div fxFlex>
 
         <div fxLayout="row" fxLayoutGap="16px">
 
-          <mat-form-field fxFlex>
+          <mat-form-field fxFlex="118px">
 
-            <input matInput placeholder="Housenumber" [(ngModel)]="address.number" name="number">
+            <input matInput placeholder="Postal code" [(ngModel)]="address.postalCode" name="postalCode">
 
           </mat-form-field>
 
-          <mat-form-field fxFlex>
+          <mat-form-field fxFlex="118px">
 
-            <input matInput placeholder="Floor/Apartment" [(ngModel)]="address.apartmentFloor" name="apartmentFloor">
+            <input matInput placeholder="Housenumber" [(ngModel)]="address.number" name="number">
 
           </mat-form-field>
 
@@ -32,19 +26,21 @@
 
       </div>
 
+      <mat-form-field fxFlex>
+
+        <input matInput placeholder="Floor/Apartment" [(ngModel)]="address.apartmentFloor" name="apartmentFloor">
+
+      </mat-form-field>
+
     </div>
 
   </div>
 
-  <div fxFlex>
+  <mat-form-field fxFlex>
 
-    <mat-form-field>
+    <input matInput placeholder="Address" [(ngModel)]="address.address" name="address">
 
-      <input matInput placeholder="Address" [(ngModel)]="address.address" name="address">
-
-    </mat-form-field>
-
-  </div>
+  </mat-form-field>
 
   <div fxFlex>
 
