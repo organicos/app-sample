@@ -10,6 +10,17 @@ export class CountryService {
     { id: 2, label: 'Netherlands', value: 'nl' },
   ];
 
+  public cities = {
+    br: [
+      { id: 1, label: 'Florianópolis', value: 'fpolis' },
+      { id: 2, label: 'São Paulo', value: 'sp' },
+    ],
+    nl: [
+      { id: 1, label: 'Amsterdam', value: 'amsterdam' },
+      { id: 2, label: 'Roterdam', value: 'roterdam' },
+    ],
+  };
+
   constructor() { }
 
 }

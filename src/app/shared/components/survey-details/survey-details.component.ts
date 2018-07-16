@@ -11,6 +11,8 @@ export class SurveyDetailsComponent {
 
   countries = [];
 
+  cities = [];
+
   @Input() person: NaturalPerson = new NaturalPerson();
 
   @Output() saved = new EventEmitter<any>();
@@ -24,6 +26,12 @@ export class SurveyDetailsComponent {
   save() {
 
     this.saved.emit(this.person);
+
+  }
+
+  updateCities() {
+
+    this.cities = this.countryService.cities[this.person.countryOfBirth];
 
   }
 

@@ -126,7 +126,7 @@
 
       <mat-form-field fxFlex>
 
-        <mat-select placeholder="Country of birth" [(ngModel)]="person.countryOfBirth" name="countryOfBirth">
+        <mat-select placeholder="Country of birth" [(ngModel)]="person.countryOfBirth" (ngModelChange)="updateCities()" name="countryOfBirth">
           <mat-option *ngFor="let countryOfBirth of countries" [value]="countryOfBirth.value">
             {{countryOfBirth.label}}
           </mat-option>
@@ -136,8 +136,8 @@
 
       <mat-form-field fxFlex>
 
-        <mat-select placeholder="Place of birth" [(ngModel)]="person.placeOfBirth" name="placeOfBirth">
-          <mat-option *ngFor="let placeOfBirth of countries" [value]="placeOfBirth.value">
+        <mat-select placeholder="Place of birth" [(ngModel)]="person.placeOfBirth" name="placeOfBirth" [disabled]="!person.countryOfBirth">
+          <mat-option *ngFor="let placeOfBirth of cities" [value]="placeOfBirth.value">
             {{placeOfBirth.label}}
           </mat-option>
         </mat-select>
