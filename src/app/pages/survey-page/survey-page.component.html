@@ -90,37 +90,41 @@
 
       </div>
 
-      <mat-card fxFlex>
+      <div fxFlex>
 
-        <form role="form">
+        <mat-card>
 
-          <ng-container [ngSwitch]="currentPath">
-            <app-survey-address [address]="person.address" *ngSwitchCase="'address'"></app-survey-address>
-            <app-survey-aditional-details *ngSwitchCase="'aditional-details'"></app-survey-aditional-details>
-            <app-survey-qualification-interest *ngSwitchCase="'qualification-interest'"></app-survey-qualification-interest>
-            <app-survey-second-nationality *ngSwitchCase="'second-nationality'"></app-survey-second-nationality>
-            <app-survey-details [person]="person" *ngSwitchDefault></app-survey-details>
-          </ng-container>
+          <form role="form">
 
-        </form>
+            <ng-container [ngSwitch]="currentPath">
+              <app-survey-address [address]="person.address" *ngSwitchCase="'address'"></app-survey-address>
+              <app-survey-aditional-details *ngSwitchCase="'aditional-details'"></app-survey-aditional-details>
+              <app-survey-qualification-interest *ngSwitchCase="'qualification-interest'"></app-survey-qualification-interest>
+              <app-survey-second-nationality *ngSwitchCase="'second-nationality'"></app-survey-second-nationality>
+              <app-survey-details [person]="person" *ngSwitchDefault></app-survey-details>
+            </ng-container>
 
-        <div fxLayout="row" fxLayoutGap="8px">
+          </form>
 
-          <button fxFlex mat-raised-button color="default" type="button" (click)="goPreviousStep()" *ngIf="currentPath && currentPath !== '.'">
-            Back
-          </button>
+          <mat-card-actions fxLayout="row" fxLayoutGap="8px">
 
-          <button fxFlex mat-raised-button color="primary" type="button" (click)="goNextStep()" *ngIf="currentPath !== 'qualification-interest'">
-            Next
-          </button>
+            <button fxFlex mat-raised-button color="default" type="button" (click)="goPreviousStep()" *ngIf="currentPath && currentPath !== '.'">
+              Back
+            </button>
 
-          <button fxFlex mat-raised-button color="primary" type="button" (click)="finish()" [disabled]="saving" *ngIf="currentPath === 'qualification-interest'">
-            Finish
-          </button>
+            <button fxFlex mat-raised-button color="primary" type="button" (click)="goNextStep()" *ngIf="currentPath !== 'qualification-interest'">
+              Next
+            </button>
 
-        </div>
+            <button fxFlex mat-raised-button color="primary" type="button" (click)="finish()" [disabled]="saving" *ngIf="currentPath === 'qualification-interest'">
+              Finish
+            </button>
 
-      </mat-card>
+          </mat-card-actions>
+
+        </mat-card>
+
+      </div>
 
       <div fxFlex="235px">
 

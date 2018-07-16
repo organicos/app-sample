@@ -44,11 +44,7 @@ export class SurveyPageComponent {
     private router: Router,
     protected route: ActivatedRoute
   ) {
-
     this.subscribeToActiveRoute();
-
-    console.log('component restarted');
-
   }
 
   finish() {
@@ -60,8 +56,6 @@ export class SurveyPageComponent {
         tap(() => this.saving = false)
       )
       .subscribe(res => {
-        console.log('RESPONSE', res);
-
         this.snackbar.open('Your data was saved!', null, {
           panelClass: 'blanco-primary-bg',
           duration: MESSAGE_DURATION,

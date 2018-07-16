@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatInputModule, MatRadioModule, MatSelectModule, MatDatepickerModule } from '@angular/material';
+import { MatInputModule, MatRadioModule, MatSelectModule, MatDatepickerModule, MatDividerModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { SurveyDetailsComponent } from './survey-details.component';
 import { CountryModule } from '@app/shared/services/country/country.module';
@@ -12,6 +12,7 @@ import { CountryModule } from '@app/shared/services/country/country.module';
     CountryModule,
     FlexLayoutModule,
     FormsModule,
+    MatDividerModule,
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
