@@ -114,7 +114,7 @@
             Next
           </button>
 
-          <button fxFlex mat-raised-button color="primary" type="button" (click)="finish()" *ngIf="currentPath === 'qualification-interest'">
+          <button fxFlex mat-raised-button color="primary" type="button" (click)="finish()" [disabled]="saving" *ngIf="currentPath === 'qualification-interest'">
             Finish
           </button>
 

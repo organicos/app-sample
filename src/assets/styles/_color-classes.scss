@@ -1,41 +1,41 @@
 // Primary
 .blanco-primary-color {
-  color: $blanco-primary-color;
+  color: $blanco-primary-color !important;
 }
 
 .blanco-primary-bg {
-  background-color: $blanco-primary-bg;
-  color: mat-contrast($blanco-theme-primary, default);
+  background-color: $blanco-primary-bg !important;
+  color: mat-contrast($blanco-theme-primary, default) !important;
 }
 
 .blanco-primary-border-3px {
-  border: 3px solid $blanco-primary-bg;
+  border: 3px solid $blanco-primary-bg !important;
 }
 
 // Accent
 .blanco-accent-color {
-  color: $blanco-accent-color;
+  color: $blanco-accent-color !important;
 }
 
 .blanco-accent-bg {
-  background-color: $blanco-accent-bg;
-  color: mat-contrast($blanco-theme-accent, default);
+  background-color: $blanco-accent-bg !important;
+  color: mat-contrast($blanco-theme-accent, default) !important;
 }
 
 .blanco-accent-border-3px {
-  border: 3px solid $blanco-accent-bg;
+  border: 3px solid $blanco-accent-bg !important;
 }
 
 // Warn
 .blanco-warn-color {
-  color: $blanco-warn-color;
+  color: $blanco-warn-color !important;
 }
 
 .blanco-warn-bg {
-  background-color: $blanco-warn-bg;
-  color: mat-contrast($blanco-theme-warn, default);
+  background-color: $blanco-warn-bg !important;
+  color: mat-contrast($blanco-theme-warn, default) !important;
 }
 
 .blanco-warn-border-3px {
-  border: 3px solid $blanco-warn-bg;
+  border: 3px solid $blanco-warn-bg !important;
 }

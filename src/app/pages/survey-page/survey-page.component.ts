@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter, tap } from 'rxjs/operators';
 import { Customer } from '@app/shared/models/customer.model';
 import { BlancoService } from '@app/shared/services/blanco/blanco.service';
 import { MatSnackBar } from '@angular/material';
@@ -26,6 +26,8 @@ export class SurveyPageComponent {
 
   title = 'Scan complete!';
 
+  saving: boolean;
+
   subtitle = 'Please review your information below.';
 
   steps = [
@@ -50,11 +52,17 @@ export class SurveyPageComponent {
   }
 
   finish() {
+
+    this.saving = true;
+
     this.blancoService.upsertCustomer(this.customer)
+      .pipe(
+        tap(() => this.saving = false)
+      )
       .subscribe(res => {
         console.log('RESPONSE', res);
 
-        this.snackbar.open('Your data was saved!', 'X', {
+        this.snackbar.open('Your data was saved!', null, {
           panelClass: 'blanco-primary-bg',
           duration: MESSAGE_DURATION,
         });
