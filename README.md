@@ -6,14 +6,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The demo is hosted in a Github Page. 
 
-[Open the demo](https://organicos.github.io/sample-app/)
+[Open the demo](https://organicos.github.io/app-sample/)
 
 ## Running
 
 Clone, enter, install, serve...
 
-1. Clone: `git clone https://github.com/organicos/sample-app`
-2. Go to root folder: `cd sample-app`
+1. Clone: `git clone https://github.com/organicos/app-sample`
+2. Go to root folder: `cd app-sample`
 3. Install dependencies: `npm i`
 4. Serve locally: `ng s`
 5. Open your browser e go to `localhost:4200`
