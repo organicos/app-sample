@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { Customer } from '@app/shared/models/customer.model';
+import { BlancoService } from '@app/shared/services/blanco/blanco.service';
+import { MatSnackBar } from '@angular/material';
+
+const MESSAGE_DURATION = 2e3;
 
 @Component({
   selector: 'app-survey-page',
@@ -11,9 +16,7 @@ export class SurveyPageComponent {
 
   currentPath = '.';
 
-  customer: any = {
-    name: 'Lucas Simons'
-  };
+  customer = new Customer();
 
   manager: any = {
     name: 'Jan de Vries',
@@ -34,6 +37,8 @@ export class SurveyPageComponent {
   ];
 
   constructor(
+    private blancoService: BlancoService,
+    private snackbar: MatSnackBar,
     private router: Router,
     protected route: ActivatedRoute
   ) {
@@ -45,7 +50,19 @@ export class SurveyPageComponent {
   }
 
   finish() {
-    this.router.navigate(['/']);
+    this.blancoService.upsertCustomer(this.customer)
+      .subscribe(res => {
+        console.log('RESPONSE', res);
+
+        this.snackbar.open('Your data was saved!', 'X', {
+          panelClass: 'blanco-primary-bg',
+          duration: MESSAGE_DURATION,
+        });
+
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, MESSAGE_DURATION + 500);
+      });
   }
 
   goPreviousStep() {
@@ -56,12 +73,8 @@ export class SurveyPageComponent {
     this.goTostep(1);
   }
 
-  get validSurvey() {
-
-    return this.steps.reduce((lastValue, step) => {
-      return step.valid && lastValue;
-    }, false);
-
+  get person() {
+    return this.customer.parties[0].naturalPerson;
   }
 
   private goTostep(offset) {

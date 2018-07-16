@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { CountryService } from '@app/shared/services/country/country.service';
+import { Address } from '@app/shared/models/customer.model';
 
 @Component({
   selector: 'app-survey-address',
@@ -8,7 +9,7 @@ import { CountryService } from '@app/shared/services/country/country.service';
 })
 export class SurveyAddressComponent {
 
-  address: any = {};
+  @Input() address = new Address();
 
   countries = [];
 

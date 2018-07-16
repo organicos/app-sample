@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { CountryService } from '@app/shared/services/country/country.service';
+import { NaturalPerson } from '@app/shared/models/customer.model';
 
 @Component({
   selector: 'app-survey-details',
@@ -8,9 +9,9 @@ import { CountryService } from '@app/shared/services/country/country.service';
 })
 export class SurveyDetailsComponent {
 
-  details: any = {};
-
   countries = [];
+
+  @Input() person: NaturalPerson = new NaturalPerson();
 
   @Output() saved = new EventEmitter<any>();
 
@@ -22,7 +23,7 @@ export class SurveyDetailsComponent {
 
   save() {
 
-    this.saved.emit(this.details);
+    this.saved.emit(this.person);
 
   }
 

@@ -48,7 +48,7 @@
 
               <div fxFlex>
 
-                {{ customer.name }}
+                {{ person.firstName }} {{ person.lastName }}
 
               </div>
 
@@ -95,11 +95,11 @@
         <form role="form">
 
           <ng-container [ngSwitch]="currentPath">
-            <app-survey-address *ngSwitchCase="'address'"></app-survey-address>
+            <app-survey-address [address]="person.address" *ngSwitchCase="'address'"></app-survey-address>
             <app-survey-aditional-details *ngSwitchCase="'aditional-details'"></app-survey-aditional-details>
             <app-survey-qualification-interest *ngSwitchCase="'qualification-interest'"></app-survey-qualification-interest>
             <app-survey-second-nationality *ngSwitchCase="'second-nationality'"></app-survey-second-nationality>
-            <app-survey-details *ngSwitchDefault></app-survey-details>
+            <app-survey-details [person]="person" *ngSwitchDefault></app-survey-details>
           </ng-container>
 
         </form>
@@ -114,7 +114,7 @@
             Next
           </button>
 
-          <button fxFlex mat-raised-button color="primary" type="button" (click)="finish()" [disabled]="!validSurvey" *ngIf="currentPath === 'qualification-interest'">
+          <button fxFlex mat-raised-button color="primary" type="button" (click)="finish()" *ngIf="currentPath === 'qualification-interest'">
             Finish
           </button>
 

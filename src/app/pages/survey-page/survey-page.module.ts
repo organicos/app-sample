@@ -4,7 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SurveyPageRoutingModule } from './survey-page-routing.module';
 import { SurveyPageComponent } from './survey-page.component';
-import { MatButtonModule, MatIconModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatCardModule, MatSnackBarModule } from '@angular/material';
 import { SurveyDetailsModule } from '@app/shared/components/survey-details/survey-details.module';
 import { SurveyAddressModule } from '@app/shared/components/survey-address/survey-address.module';
 import { SurveySecondNationalityModule } from '@app/shared/components/survey-second-nationality/survey-second-nationality.module';
@@ -18,6 +18,7 @@ import { SurveyQualificationInterestModule } from '@app/shared/components/survey
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatSnackBarModule,
     SurveyPageRoutingModule,
     SurveyDetailsModule,
     SurveyAddressModule,
