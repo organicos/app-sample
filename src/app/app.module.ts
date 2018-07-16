@@ -8,6 +8,7 @@ import { CoreModule } from '@app/core/core/core.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { MatToolbarModule, MatIconModule, MatButtonModule, MatDividerModule, MatNativeDateModule } from '@angular/material';
 import { environment } from '../environments/environment';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
+    FlexLayoutModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,

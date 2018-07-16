@@ -11,14 +11,31 @@
     }
   }
   
-  img {
-    margin-top: 8px;
-    height: 48px;
+  .toolbar-top {
+    img {
+      margin-top: 8px;
+    }
   }
 
   .content-wrapper {
     width: 1000px;
+    padding-bottom: 32px;
     margin: auto;
+    min-height: calc(100vh - 160px);
+  }
+
+  .bottom-toolbar {
+    .footer {
+      flex-grow: 1;
+      text-align: center;
+      small {
+        font-size: 12px;
+        font-weight: bold;
+      }
+      img {
+        margin-bottom: -4px;
+      }
+    }
   }
   
 }

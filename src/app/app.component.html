@@ -1,7 +1,9 @@
 <div class="app-wrapper">
-  <mat-toolbar>
+
+  <mat-toolbar class="toolbar-top">
+
     <a routerLink="/" [title]="title">
-      <img src="https://blanco.services/wp-content/uploads/2016/11/logo-zwart-v-14102016_3.png">
+      <img src="https://blanco.services/wp-content/uploads/2016/11/logo-zwart-v-14102016_3.png" height="48px">
     </a>
 
     <span class="app-spacer"></span>
@@ -26,7 +28,18 @@
     </span>
 
   </mat-toolbar>
+
   <div class="content-wrapper">
     <router-outlet></router-outlet>
   </div>
+
+  <mat-toolbar class="bottom-toolbar">
+    <div class="footer">
+      <small>Powered by</small>
+      &nbsp;
+      <a routerLink="/" [title]="title">
+        <img src="https://blanco.services/wp-content/uploads/2016/11/logo-zwart-v-14102016_3.png" height="20px">
+      </a>
+    </div>
+  </mat-toolbar>
 </div>
