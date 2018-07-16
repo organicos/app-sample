@@ -8,14 +8,14 @@
       "updateMode": "prefetch",
       "urls": [
         "https://organicos.github.io/app-sample/0.a90d87e5440901d6ae3a.js",
-        "https://organicos.github.io/app-sample/1.bb4668881d9bc4236218.js",
+        "https://organicos.github.io/app-sample/1.b35ad0ea5fe2d456c35f.js",
         "https://organicos.github.io/app-sample/2.dc7ca1b1b5ef1b2aae24.js",
         "https://organicos.github.io/app-sample/3.a39d289a6a33c15655c6.js",
         "https://organicos.github.io/app-sample/favicon.ico",
         "https://organicos.github.io/app-sample/index.html",
         "https://organicos.github.io/app-sample/main.b5526458a48d2d3228e7.js",
         "https://organicos.github.io/app-sample/polyfills.a5e611dccaf86beb778a.js",
-        "https://organicos.github.io/app-sample/runtime.6392bba95df56ad6002b.js",
+        "https://organicos.github.io/app-sample/runtime.e16720881f62607f0ddd.js",
         "https://organicos.github.io/app-sample/styles.bad052534a28625a04de.css"
       ],
       "patterns": []
@@ -58,7 +58,7 @@
   "dataGroups": [],
   "hashTable": {
     "https://organicos.github.io/app-sample/0.a90d87e5440901d6ae3a.js": "b576c684cfe041294d3e8b94a88819fc82d6c3b7",
-    "https://organicos.github.io/app-sample/1.bb4668881d9bc4236218.js": "2f77a8c09445237109d08ed806e1908f1f3f8bae",
+    "https://organicos.github.io/app-sample/1.b35ad0ea5fe2d456c35f.js": "08b08726b69bf43fe88804e6ea088d59b09c9b2c",
     "https://organicos.github.io/app-sample/2.dc7ca1b1b5ef1b2aae24.js": "15645b96e38fa838478d40a1cd0820a710761988",
     "https://organicos.github.io/app-sample/3.a39d289a6a33c15655c6.js": "424ef46fcd2d04966184442266027d249677cd40",
     "https://organicos.github.io/app-sample/assets/fonts/Roboto/Medium/Roboto-Medium.eot": "17535ff39be7f0d9b1968679e37a00820a79efd4",
@@ -88,10 +88,10 @@
     "https://organicos.github.io/app-sample/assets/styles/_theming.scss": "8719f6369f37f6a545b9c4f19fee582f5b17d215",
     "https://organicos.github.io/app-sample/assets/styles/app-startup-spinner.css": "318f6850bb590e942a6fb999651d7e29b7c748fb",
     "https://organicos.github.io/app-sample/favicon.ico": "f27e58e6bb9a18e2e2bf740949e79c28651ba363",
-    "https://organicos.github.io/app-sample/index.html": "7f0540c4412b3dda26c49a11b294800bafb12c60",
+    "https://organicos.github.io/app-sample/index.html": "04b42951526f9c314a3e22f65156067a34de07de",
     "https://organicos.github.io/app-sample/main.b5526458a48d2d3228e7.js": "646673624332676b80fc3ca5bdcd3812aca03504",
     "https://organicos.github.io/app-sample/polyfills.a5e611dccaf86beb778a.js": "ad3e139f4e46a56685ccbe012b885aac67989adb",
-    "https://organicos.github.io/app-sample/runtime.6392bba95df56ad6002b.js": "08b8a663acff0f64fddf3c9fa53d655ef4ac0225",
+    "https://organicos.github.io/app-sample/runtime.e16720881f62607f0ddd.js": "fae8d3897001b284a331accfcdf7c0a3e0d44123",
     "https://organicos.github.io/app-sample/styles.bad052534a28625a04de.css": "d4e2c50a115b2790612698e6b22adbd681767bb4"
   },
   "navigationUrls": [
