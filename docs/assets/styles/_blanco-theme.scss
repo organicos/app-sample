@@ -3,8 +3,8 @@
 
 // COLORS
 $blanco-theme-primary: mat-palette($mat-teal, A400);
-$blanco-theme-accent: mat-palette($mat-orange);
-$blanco-theme-warn: mat-palette($mat-red);
+$blanco-theme-accent: mat-palette($mat-blue, 800);
+$blanco-theme-warn: mat-palette($mat-orange);
 
 // THEME
 $blanco-theme: mat-light-theme($blanco-theme-primary, $blanco-theme-accent, $blanco-theme-warn);
