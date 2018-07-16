@@ -1,6 +1,6 @@
-import { TestBed, inject, async, getTestBed } from '@angular/core/testing';
+import { TestBed, getTestBed } from '@angular/core/testing';
 
-import { BlancoService, API } from './blanco.service';
+import { BlancoService, ENDPOINT } from './blanco.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('BlancoService', () => {
@@ -33,23 +33,21 @@ describe('BlancoService', () => {
 
       const call = service.insertCustomer(year);
 
-      expect(call.then).toBeTruthy();
+      expect(call.subscribe).toBeTruthy();
 
     });
 
-    it('should load sesions', () => {
-
-      const endpoint = API.CHAMPION_BY_YEAR_API.replace('${year}', year);
+    it('should load data', () => {
 
       const seasonMock = [
         { foo: 'bar' }
       ];
 
-      service.insertCustomer(year).then(season => {
+      service.insertCustomer(year).subscribe(season => {
         expect(season).toBeTruthy(2);
       });
 
-      const req = httpMock.expectOne(endpoint);
+      const req = httpMock.expectOne(ENDPOINT);
 
       expect(req.request.method).toBe('GET');
 
@@ -58,14 +56,12 @@ describe('BlancoService', () => {
     });
 
     it('should throw a custom error if a wrong year is given`', () => {
-      const endpoint = API.CHAMPION_BY_YEAR_API.replace('${year}', year);
-
       service.insertCustomer(null)
-        .then(() => { }, err => {
+        .subscribe(() => { }, err => {
           expect(err).toBe(`BlancoService Error:: Need to improve error log`);
         });
 
-      httpMock.expectNone(endpoint);
+      httpMock.expectNone('http://fakepoint.com');
     });
 
   });
