@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SurveySecondNationalityComponent } from './survey-second-nationality.component';
+import { MatDividerModule } from '@angular/material';
 
 describe('SurveySecondNationalityComponent', () => {
   let component: SurveySecondNationalityComponent;
@@ -8,9 +9,12 @@ describe('SurveySecondNationalityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SurveySecondNationalityComponent ]
+      declarations: [SurveySecondNationalityComponent],
+      imports: [
+        MatDividerModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

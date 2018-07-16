@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SurveyQualificationInterestComponent } from './survey-qualification-interest.component';
+import { MatDividerModule } from '@angular/material';
 
 describe('SurveyQualificationInterestComponent', () => {
   let component: SurveyQualificationInterestComponent;
@@ -8,9 +9,12 @@ describe('SurveyQualificationInterestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SurveyQualificationInterestComponent ]
+      declarations: [SurveyQualificationInterestComponent],
+      imports: [
+        MatDividerModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

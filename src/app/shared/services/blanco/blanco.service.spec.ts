@@ -31,7 +31,7 @@ describe('BlancoService', () => {
 
     it('should return a promise', () => {
 
-      const call = service.insertCustomer(year);
+      const call = service.listCustomer(year);
 
       expect(call.subscribe).toBeTruthy();
 
@@ -43,7 +43,7 @@ describe('BlancoService', () => {
         { foo: 'bar' }
       ];
 
-      service.insertCustomer(year).subscribe(season => {
+      service.listCustomer().subscribe(season => {
         expect(season).toBeTruthy(2);
       });
 
@@ -56,7 +56,7 @@ describe('BlancoService', () => {
     });
 
     it('should throw a custom error if a wrong year is given`', () => {
-      service.insertCustomer(null)
+      service.listCustomer()
         .subscribe(() => { }, err => {
           expect(err).toBe(`BlancoService Error:: Need to improve error log`);
         });
